@@ -16,7 +16,9 @@
 
 /* Card styles */
 .pizza-card {
-  display: inline-flex;
-  margin: 5vh 1rem 5vh 1rem;
+  display: flex;
+  justify-content: center;
   min-height: 50vh;
+  margin: auto;
+  width: 50%;
 }

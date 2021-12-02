@@ -6,27 +6,30 @@ import { Button, CardActionArea, CardActions } from '@mui/material';
 
 function PizzaSelect() {
     return (
-        <>
-            <h3>Step 1: Select Your Pizza!</h3>
+        <> 
+            <h2>Step 1: Select Your Pizza!</h2>
             {/* Pepperoni pizza */}
-            <Card sx={{ maxWidth: 345 }} className="pizza-card">
-            <CardActionArea>
-                <CardMedia
-                component="img"
-                height="140"
-                image="images/pizza_01.jpeg"
-                alt="pizza_01"
-                />
-                <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
-                    Pepperoni Pizza
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                    Homemade classic pepperoni pizza, topped with the souls of our fallen employee's.
-                </Typography>
-                </CardContent>
-            </CardActionArea>
-            </Card>
+            <div>
+                <Card sx={{ maxWidth: 345 }} className="pizza-card">
+                <CardActionArea>
+                    <CardMedia
+                    component="img"
+                    height="140"
+                    image="images/pizza_01.jpeg"
+                    alt="pizza_01"
+                    />
+                    <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                        Pepperoni Pizza
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                        Homemade classic pepperoni pizza, topped with the souls of our fallen employee's.
+                    </Typography>
+                    </CardContent>
+                </CardActionArea>
+                </Card>
+                <Button variant="contained">Contained</Button>
+            </div>
             {/* Sausage pizza */}
             <Card sx={{ maxWidth: 345 }} className="pizza-card">
             <CardActionArea>
