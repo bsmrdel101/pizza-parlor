@@ -6,8 +6,11 @@ import { Button, CardActionArea, CardActions } from '@mui/material';
 
 function PizzaSelect() {
     return (
-        <div className="pizza-card-container"> 
+        <div className="pizza-card-container">
             <h2 className="subtitle">Step 1: Select Your Pizza!</h2>
+            <div>
+                <p className="cart-total">Cart Total: $</p>
+            </div>
             {/* Pepperoni pizza */}
             <div className="pizza-card-spacer">
                 <Card sx={{ maxWidth: 345 }} className="pizza-card">
@@ -28,7 +31,7 @@ function PizzaSelect() {
                     </CardContent>
                 </CardActionArea>
                 </Card>
-                <Button variant="contained">Add</Button>
+                <Button variant="contained" color="success">Add</Button>
             </div>
             {/* Sausage pizza */}
             <div className="pizza-card-spacer">
@@ -50,7 +53,7 @@ function PizzaSelect() {
                     </CardContent>
                 </CardActionArea>
                 </Card>
-                <Button variant="contained">Add</Button>
+                <Button variant="contained" color="success">Add</Button>
             </div>
             {/* Pizza pineapple */}
             <div className="pizza-card-spacer">
@@ -72,7 +75,7 @@ function PizzaSelect() {
                     </CardContent>
                 </CardActionArea>
                 </Card>
-                <Button variant="contained">Add</Button>
+                <Button variant="contained" color="success">Add</Button>
             </div>
         </div>
     );

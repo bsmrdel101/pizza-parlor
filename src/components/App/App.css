@@ -16,8 +16,17 @@
 
 /* Other styles */
 .subtitle {
+  display: inline-block;
   color: white;
-  padding-top: 3vh;
+  border-bottom: 2px solid darkred;
+  padding: 2vh 0 3px 0;
+  font-size: 35px;
+}
+
+.cart-total {
+  text-align: center;
+  color: white;
+  font-size: large;
 }
 
 /* Card styles */
@@ -36,4 +45,10 @@
 
 .pizza-card-container {
   background-color: #a3435dbf;
+}
+
+.cart-total {
+  color: white;
+  font-size: large;
+  padding-bottom: 3vh;
 }
