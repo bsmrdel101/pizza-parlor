@@ -14,6 +14,12 @@
   font-size: 2em;
 }
 
+/* Other styles */
+.subtitle {
+  color: white;
+  padding-top: 3vh;
+}
+
 /* Card styles */
 .pizza-card {
   display: flex;
@@ -24,6 +30,10 @@
   width: 50%;
 }
 
-.pizza-card-container {
+.pizza-card-spacer {
   margin-bottom: 5vh;
+}
+
+.pizza-card-container {
+  background-color: #a3435dbf;
 }

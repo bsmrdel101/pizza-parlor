@@ -6,10 +6,10 @@ import { Button, CardActionArea, CardActions } from '@mui/material';
 
 function PizzaSelect() {
     return (
-        <> 
-            <h2>Step 1: Select Your Pizza!</h2>
+        <div className="pizza-card-container"> 
+            <h2 className="subtitle">Step 1: Select Your Pizza!</h2>
             {/* Pepperoni pizza */}
-            <div className="pizza-card-container">
+            <div className="pizza-card-spacer">
                 <Card sx={{ maxWidth: 345 }} className="pizza-card">
                 <CardActionArea>
                     <CardMedia
@@ -31,7 +31,7 @@ function PizzaSelect() {
                 <Button variant="contained">Add</Button>
             </div>
             {/* Sausage pizza */}
-            <div className="pizza-card-container">
+            <div className="pizza-card-spacer">
                 <Card sx={{ maxWidth: 345 }} className="pizza-card">
                 <CardActionArea>
                     <CardMedia
@@ -53,7 +53,7 @@ function PizzaSelect() {
                 <Button variant="contained">Add</Button>
             </div>
             {/* Pizza pineapple */}
-            <div className="pizza-card-container">
+            <div className="pizza-card-spacer">
                 <Card sx={{ maxWidth: 345 }} className="pizza-card">
                 <CardActionArea>
                     <CardMedia
@@ -74,7 +74,7 @@ function PizzaSelect() {
                 </Card>
                 <Button variant="contained">Add</Button>
             </div>
-        </>
+        </div>
     );
 }
 
