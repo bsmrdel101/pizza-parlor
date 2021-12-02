@@ -9,7 +9,7 @@ function PizzaSelect() {
         <>
             <h3>Step 1: Select Your Pizza!</h3>
             {/* Pepperoni pizza */}
-            <Card sx={{ maxWidth: 345 }}>
+            <Card sx={{ maxWidth: 345 }} className="pizza-card">
             <CardActionArea>
                 <CardMedia
                 component="img"
@@ -19,22 +19,21 @@ function PizzaSelect() {
                 />
                 <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                    Lizard
+                    Pepperoni Pizza
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                    Lizards are a widespread group of squamate reptiles, with over 6,000
-                    species, ranging across all continents except Antarctica
+                    Homemade classic pepperoni pizza, topped with the souls of our fallen employee's.
                 </Typography>
                 </CardContent>
             </CardActionArea>
             <CardActions>
                 <Button size="small" color="primary">
-                Share
+                Add
                 </Button>
             </CardActions>
             </Card>
             {/* Sausage pizza */}
-            <Card sx={{ maxWidth: 345 }}>
+            <Card sx={{ maxWidth: 345 }} className="pizza-card">
             <CardActionArea>
                 <CardMedia
                 component="img"
@@ -44,22 +43,21 @@ function PizzaSelect() {
                 />
                 <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                    Lizard
+                    Sausage Pizza
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                    Lizards are a widespread group of squamate reptiles, with over 6,000
-                    species, ranging across all continents except Antarctica
+                    Hot italian sausage, frozen bread dough, pizza sauce, mozzarella
                 </Typography>
                 </CardContent>
             </CardActionArea>
             <CardActions>
                 <Button size="small" color="primary">
-                Share
+                Add
                 </Button>
             </CardActions>
             </Card>
             {/* Pizza pineapple */}
-            <Card sx={{ maxWidth: 345 }}>
+            <Card sx={{ maxWidth: 345 }} className="pizza-card">
             <CardActionArea>
                 <CardMedia
                 component="img"
@@ -69,17 +67,16 @@ function PizzaSelect() {
                 />
                 <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
-                    Lizard
+                    o̵͙̦̿̏r̸̢̥͌b̸͍͌í̸͔͗d̵͚̐̎ḑ̶̆è̴̼͘ǹ̷͚ ̸͔͛̇P̷̘̟͝i̵̳͝z̵̻̀͑z̸̲̒â̵̙
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
-                    Lizards are a widespread group of squamate reptiles, with over 6,000
-                    species, ranging across all continents except Antarctica
+                    Ḥ̴̑ö̶̗́̈́m̷͚̎̋ë̵̜͎́ ̶͈͉͒g̵̱̪̾̄ṙ̷̬o̸̼̘̅͗w̸͕͗̒ņ̴̞̈ ̴̘̿t̵̡̔͒r̴̛̪ǒ̷̯͘p̵̟̖̃̌i̵͎͊c̴̨͈̄ȃ̶̰̝l̸̮̰̿ ̸̜̅p̶͎̈́͘͜i̴̭͒͝z̸͉͈̈̿ž̴̡a̴͈̺̍,̸̪̘͒ ̸̜̥̅̀f̵̩̅̀r̴͎͒̿͜ẻ̵͚͚̃ş̸͗͝ͅh̸̡͑̀ ̷̪͎͛f̸̗̲̒r̴̰͆ở̶͙̣m̶̜̮̈́ ̵͇͌̕t̵́͒͜h̴̥̍ẽ̵̬ ̸̾͜g̵̻̥͗a̴̙̋ř̴̗͉d̸̆͜é̴̯ṇ̸̏ͅ.̵̣̈
                 </Typography>
                 </CardContent>
             </CardActionArea>
             <CardActions>
                 <Button size="small" color="primary">
-                Share
+                Add
                 </Button>
             </CardActions>
             </Card>

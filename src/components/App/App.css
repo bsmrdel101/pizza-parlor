@@ -15,3 +15,11 @@
 }
 
 /* Card styles */
+.pizza-card {
+  display: inline-flex;
+  gap: 1rem;
+}
+
+.card-button {
+  padding-top: 20px;
+}
