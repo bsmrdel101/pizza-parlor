@@ -26,11 +26,6 @@ function PizzaSelect() {
                 </Typography>
                 </CardContent>
             </CardActionArea>
-            <CardActions>
-                <Button size="small" color="primary">
-                Add
-                </Button>
-            </CardActions>
             </Card>
             {/* Sausage pizza */}
             <Card sx={{ maxWidth: 345 }} className="pizza-card">
@@ -50,11 +45,6 @@ function PizzaSelect() {
                 </Typography>
                 </CardContent>
             </CardActionArea>
-            <CardActions>
-                <Button size="small" color="primary">
-                Add
-                </Button>
-            </CardActions>
             </Card>
             {/* Pizza pineapple */}
             <Card sx={{ maxWidth: 345 }} className="pizza-card">
@@ -74,11 +64,6 @@ function PizzaSelect() {
                 </Typography>
                 </CardContent>
             </CardActionArea>
-            <CardActions>
-                <Button size="small" color="primary">
-                Add
-                </Button>
-            </CardActions>
             </Card>
         </>
     );

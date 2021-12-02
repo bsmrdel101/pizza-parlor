@@ -17,9 +17,6 @@
 /* Card styles */
 .pizza-card {
   display: inline-flex;
-  gap: 1rem;
-}
-
-.card-button {
-  padding-top: 20px;
+  margin: 5vh 1rem 5vh 1rem;
+  min-height: 50vh;
 }
