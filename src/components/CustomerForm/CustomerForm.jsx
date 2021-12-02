@@ -31,8 +31,6 @@ export default function CustomerForm() {
         Step 2: Customer Information
       </Typography>
 
-      <h4> 🛒 Total Price: 💲 VALUE 🛒</h4>
-
       <Box>
       <Grid container spacing={3}>
         <Grid item xs={12} sm={8} md={6} lg={4}>
