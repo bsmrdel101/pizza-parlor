@@ -9,6 +9,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 
 export default function CustomerForm() {
 
@@ -23,6 +24,9 @@ export default function CustomerForm() {
       <Typography variant="h4" gutterBottom>
         Step 2: Customer Information
       </Typography>
+
+      <h5>Total Price: VALUE</h5>
+
       <Box>
       <Grid container spacing={3}>
         <Grid item xs={12} sm={8} md={6} lg={4}>
@@ -78,7 +82,9 @@ export default function CustomerForm() {
             </RadioGroup>
           </FormControl>
         </Grid>
-        
+        <Grid item xs={12} sm={8} md={6} lg={4}>
+          <Button variant="contained" size="large">Get me closer to 'ZA</Button>
+        </Grid>
       </Grid>
       </Box>
     </React.Fragment>
