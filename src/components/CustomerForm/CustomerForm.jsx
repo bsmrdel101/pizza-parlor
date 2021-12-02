@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
+import {useDispatch} from 'react-redux';
+import {useHistory} from 'react-router-dom';
 
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
@@ -12,8 +14,12 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 
 export default function CustomerForm() {
-
-  // const [selectedValue, setSelectedValue] = React.useState('');
+  //Will need localState for the form elements
+  const [name, setName] = useState('');
+  const [address, setAddress] = useState('');
+  const [city, setCity] = useState('');
+  const [zip, setZip] = useState('');
+  // const [radio, setRadio] = React.useState('');
 
   // const handleChange = (event) => {
   //   setSelectedValue(event.target.value);
@@ -21,16 +27,18 @@ export default function CustomerForm() {
 
   return (
     <React.Fragment>
-      <Typography variant="h4" gutterBottom>
+      <Typography variant="h5" gutterBottom>
         Step 2: Customer Information
       </Typography>
 
-      <h5>Total Price: VALUE</h5>
+      <h4> 🛒 Total Price: 💲 VALUE 🛒</h4>
 
       <Box>
       <Grid container spacing={3}>
         <Grid item xs={12} sm={8} md={6} lg={4}>
           <TextField
+            //value
+            //onChange
             required
             id="customerName"
             name="customerName"
@@ -42,6 +50,8 @@ export default function CustomerForm() {
         </Grid>
         <Grid item xs={12} sm={8} md={6} lg={4}>
           <TextField
+            //value
+            //onChange
             required
             id="address1"
             name="address1"
@@ -53,6 +63,8 @@ export default function CustomerForm() {
         </Grid>
         <Grid item xs={12} sm={8} md={6} lg={4}>
           <TextField
+            //value
+            //onChange
             required
             id="city"
             name="city"
@@ -64,6 +76,8 @@ export default function CustomerForm() {
         </Grid>
         <Grid item xs={12} sm={8} md={6} lg={4} >
           <TextField
+            //value
+            //onChange
             required
             id="zip"
             name="zip"
@@ -83,7 +97,7 @@ export default function CustomerForm() {
           </FormControl>
         </Grid>
         <Grid item xs={12} sm={8} md={6} lg={4}>
-          <Button variant="contained" size="large">Get me closer to 'ZA</Button>
+          <Button variant="contained" size="large">Get me closer to 'ZA 🍕</Button>
         </Grid>
       </Grid>
       </Box>
