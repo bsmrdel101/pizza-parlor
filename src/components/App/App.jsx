@@ -6,10 +6,11 @@ import './App.css';
 
 
 // Import components
+import AdminPage from '../AdminPage/AdminPage';
 import PizzaSelect from '../PizzaSelect/PizzaSelect';
 import TestComponent from '../TestComponent/TestComponent.jsx';
 import CustomerForm from '../CustomerForm/CustomerForm.jsx';
-import AdminPage from '../AdminPage/AdminPage';
+import Checkout from './Checkout/Checkout';
 
 
 function App() {
@@ -22,15 +23,13 @@ function App() {
   
       <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p>
-
-      <p> Joe is pizza. </p>
-
+      
+      <AdminPage />
       <TestComponent />
       
       <PizzaSelect />
       <CustomerForm />
-      <AdminPage />
-
+      <Checkout />
 
     </div>
   );
