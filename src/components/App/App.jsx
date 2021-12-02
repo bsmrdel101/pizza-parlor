@@ -2,10 +2,16 @@ import React from 'react';
 import axios from 'axios';
 import './App.css';
 
+
+
+
 // Import components
+import AdminPage from '../AdminPage/AdminPage';
 import PizzaSelect from '../PizzaSelect/PizzaSelect';
 import TestComponent from '../TestComponent/TestComponent.jsx';
 import CustomerForm from '../CustomerForm/CustomerForm.jsx';
+import Checkout from './Checkout/Checkout';
+
 
 function App() {
 
@@ -17,13 +23,13 @@ function App() {
   
       <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p>
-
-      <p> Joe is pizza. </p>
-
+      
+      <AdminPage />
       <TestComponent />
       
       <PizzaSelect />
       <CustomerForm />
+      <Checkout />
 
     </div>
   );
