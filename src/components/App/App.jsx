@@ -4,6 +4,7 @@ import './App.css';
 
 // Import components
 import PizzaSelect from '../PizzaSelect/PizzaSelect';
+import TestComponent from '../TestComponent/TestComponent.jsx';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
       <p>Pizza is great.</p>
       <p> Joe is also great. </p>
       <PizzaSelect />
+      <TestComponent />
     </div>
   );
 }
