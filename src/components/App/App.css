@@ -13,3 +13,42 @@
 .App-title {
   font-size: 2em;
 }
+
+/* Other styles */
+.subtitle {
+  display: inline-block;
+  color: white;
+  border-bottom: 2px solid darkred;
+  padding: 2vh 0 3px 0;
+  font-size: 35px;
+}
+
+.cart-total {
+  text-align: center;
+  color: white;
+  font-size: large;
+}
+
+/* Card styles */
+.pizza-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 50vh;
+  margin: auto;
+  width: 50%;
+}
+
+.pizza-card-spacer {
+  margin-bottom: 5vh;
+}
+
+.pizza-card-container {
+  background-color: #a3435dbf;
+}
+
+.cart-total {
+  color: white;
+  font-size: large;
+  padding-bottom: 3vh;
+}
