@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css';
 
 import TestComponent from '../TestComponent/TestComponent.jsx';
+import AdminPage from '../AdminPage/AdminPage';
 
 function App() {
 
@@ -17,7 +18,7 @@ function App() {
       <p> Joe is also great. </p>
 
       <TestComponent />
-      
+      <AdminPage />
     </div>
   );
 }
