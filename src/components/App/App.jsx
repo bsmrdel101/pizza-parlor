@@ -2,6 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import './App.css';
 
+// Import components
+import PizzaSelect from '../PizzaSelect/PizzaSelect';
 import TestComponent from '../TestComponent/TestComponent.jsx';
 
 function App() {
@@ -15,9 +17,8 @@ function App() {
       <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p>
       <p> Joe is also great. </p>
-
+      <PizzaSelect />
       <TestComponent />
-      
     </div>
   );
 }
