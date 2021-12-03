@@ -1,4 +1,5 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { useState } from 'react';
 
 // MUI
 import Card from '@mui/material/Card';
@@ -10,17 +11,20 @@ import Box from '@mui/material/Box';
 
 function PizzaSelect() {
     const pizzaMenu = useSelector((store) => store.pizzaReducer)
+    const cart = useSelector((store) => store.cartReducer)
+    const [tempCart, setTempCart] = useState([]);
+
+    const dispatch = useDispatch();
     
-    console.log(pizzaMenu);
-    console.log(pizzaMenu.name);
+    const addToCart = () => {
+        setTempCart();
+        dispatch({
+            type: 'ADD_TO_CART',
+            payload: tempCart
+        })
+    }
 
     return (
-        // <div>
-        //     {pizzaMenu.map((pizza) => {
-        //         return <p>{pizza.name}</p>
-        //     })}
-        // </div>
-
         <Box sx={{ flexGrow: 1 }} className="pizza-card-container">
             <h2 className="subtitle">Step 1: Select Your Pizza!</h2>
             <div>
@@ -50,10 +54,10 @@ function PizzaSelect() {
                                 </CardContent>
                             </CardActionArea>
                         </Card>
+                        <Button onClick={addToCart} variant="contained" color="success">Add</Button>
                     </div>
                    ); 
                 })}
-                <Button variant="contained" color="success">Add</Button>
         </Box>
     );
 }

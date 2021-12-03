@@ -43,12 +43,11 @@ import { logger } from 'redux-logger';
       "pizzas": [{
         "id": "",
         "quantity": "1"
-      },{
-        "id": "",
-        "quantity": "1"
       }]
     }], action) => {
     switch(action.type) {
+      case 'ADD_TO_CART':
+        return [...state, action.payload];
         // case 'PIZZAS_PRICE':
         //     return [...state,
         //             "total": action.payload.price,
