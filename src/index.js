@@ -41,10 +41,10 @@ import { Provider } from 'react-redux';
 // }
 
 
-  // 4.? The outgoing order being built by client?
+  // 4. The outgoing order being built by client. THE CART
   //   const ?!?!Reducer = (state = [], action) => {
 //     switch(action.type) {
-//         case 'PLACEHOLDER_SCREAM':
+//         case 'PLACEHOLDER_CART_SCREAM':
 //             return action.payload;
 //         default:
 //             return state;
@@ -57,7 +57,8 @@ const storeInstance = createStore(
   combineReducers({
       pizza,
       orders,
-      line_item
+      line_item,
+      cart
   }),
   applyMiddleware(logger),
 );
