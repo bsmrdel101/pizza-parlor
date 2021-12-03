@@ -19,14 +19,13 @@ import Checkout from '../Checkout/Checkout.jsx';
 
 function App() {
   // useSelector Global State Access
-  const pizzaMenu = useSelector((store) => store.pizzaReducer);
+  // const pizzaMenu = useSelector((store) => store.pizzaReducer)
 
 //alias useDispatch
 const dispatch = useDispatch();
 
 //AXIOS GET function that fetches Pizza table, and dispatches to pizzaReducer
 function fetchPizzaMenu() {
-
   axios({
     method: 'GET',
     url: '/api/pizza'
@@ -74,44 +73,23 @@ const getFinalOrders = () => {
 useEffect(() => {
   console.log('in useEffect');
   fetchPizzaMenu();
-  getFinalOrders();
-  console.log(pizzaMenu);
 }, []);
 
   return (
-    <div>
-      {/* <img src='images/pizza_photo.png' />
-      <p>Pizza is great.</p> */}
-      <Router>
-        <div className='App'>
-
-          <Route exact path="/">
-            <header className='App-header'>
-              <h1 className='App-title'>Prime Pizza</h1>
-            </header>
-            <PizzaSelect />
-          </Route>
-
-          <Route exact path="/CustomerForm">
-            <header className='App-header'>
-              <h1 className='App-title'>Prime Pizza</h1>
-            </header>
-            <CustomerForm />
-          </Route>
-
-          <Route>
-            <header className='App-header'>
-              <h1 className='App-title'>Prime Pizza</h1>
-            </header>
-            <Checkout />
-          </Route>
-
-          <Route exact path="/admin">
-            <AdminPage />
-          </Route>
-
-        </div>
-      </Router>
+    <div className='App'>
+      <header className='App-header'>
+        <h1 className='App-title'>Prime Pizza</h1>
+      </header>
+  
+      <img src='images/pizza_photo.png' />
+      <p>Pizza is great.</p>
+      
+      <AdminPage />
+      <TestComponent />
+      
+      <PizzaSelect fetchPizzaMenu={fetchPizzaMenu}/> 
+      <CustomerForm />
+      <Checkout />
     </div>
   );
 }
