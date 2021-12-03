@@ -14,7 +14,9 @@ import TestComponent from '../TestComponent/TestComponent.jsx';
 import CustomerForm from '../CustomerForm/CustomerForm.jsx';
 import Checkout from '../Checkout/Checkout';
 
-
+// useSelector Global State Access
+const pizzaMenu = useSelector((store) => store.pizzaReducer)
+console.log(pizzaMenu);
 
 
 // get Pizza data from server on load
@@ -57,7 +59,7 @@ function App() {
       <AdminPage />
       <TestComponent />
       
-      <PizzaSelect />
+      <PizzaSelect /> 
       <CustomerForm />
       <Checkout />
 
