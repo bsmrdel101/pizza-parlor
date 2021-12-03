@@ -12,7 +12,7 @@ import AdminPage from '../AdminPage/AdminPage';
 import PizzaSelect from '../PizzaSelect/PizzaSelect';
 import TestComponent from '../TestComponent/TestComponent.jsx';
 import CustomerForm from '../CustomerForm/CustomerForm.jsx';
-import Checkout from '../Checkout/Checkout';
+import Checkout from '../Checkout/Checkout.jsx';
 
 
 function App() {
