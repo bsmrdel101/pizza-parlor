@@ -33,24 +33,48 @@ import { logger } from 'redux-logger';
 }
 
 
-  // 3. The outgoing order being built by client. THE CART
-  //   const ?!?!Reducer = (state = [], action) => {
-//     switch(action.type) {
-//         case 'PLACEHOLDER_CART_SCREAM':
-//             return action.payload;
-//         default:
-//             return state;
 
-//     }
-// }
+    const cartReducer = (state = [{
+      "customer_name": "",
+      "street_address": "",
+      "city": "",
+      "zip": "",
+      "total": "",
+      "type": "",
+      "pizzas": [{
+        "id": "",
+        "quantity": "1"
+      },{
+        "id": "",
+        "quantity": "1"
+      }]
+    }], action) => {
+    switch(action.type) {
+        case 'PIZZAS_PRICE':
+            return [{...state,
+                    "total": action.payload.price,
+                    "pizzas": action.payload.pizzas
+                }];
+        case 'DOX_CONSUMER':
+            return [{...state,
+                    "customer_name": action.payload.name,
+                    "street_address": action.payload.address,
+                    "city": action.payload.city,
+                    "zip": action.payload.zip,
+                    "type": action.payload.type
+            }];
+        default:
+            return state;
+
+    }
+}
 
 
 const storeInstance = createStore(
   combineReducers({
       pizzaReducer,
       ordersReducer,
-      // line_item,
-      // cart
+      cartReducer
   }),
   applyMiddleware(logger),
 );

@@ -21,9 +21,34 @@ export default function CustomerForm() {
   const [zip, setZip] = useState('');
   // const [radio, setRadio] = React.useState('');
 
-  // const handleChange = (event) => {
-  //   setSelectedValue(event.target.value);
-  // };
+  const handleNameChange = (event) => {
+    setName(event.target.value);
+  };
+
+  const handleAddressChange = (event) => {
+    setAddress(event.target.value);
+  };
+
+  const handleCityChange = (event) => {
+    setCity(event.target.value);
+  };
+
+  const handleZipChange = (event) => {
+    setZip(event.target.value);
+  };
+
+  const handleButton = () => {
+    dispatchEvent({
+      type: 'DOX_CONSUMER',
+      payload: {
+        "customer_name": {name},
+        "street_address": {address},
+        "city": {city},
+        "zip": {zip},
+        "type": "delivery"
+      }
+    });
+  };
 
   return (
     <React.Fragment>
@@ -35,6 +60,9 @@ export default function CustomerForm() {
       <Grid container spacing={3}>
         <Grid item xs={12} sm={8} md={6} lg={4}>
           <TextField
+            onChange={handleNameChange}
+            type='text'
+            value={name}
             //value
             //onChange
             required
@@ -48,6 +76,9 @@ export default function CustomerForm() {
         </Grid>
         <Grid item xs={12} sm={8} md={6} lg={4}>
           <TextField
+            onChange={handleAddressChange}
+            type='text'
+            value={address}
             //value
             //onChange
             required
@@ -61,6 +92,9 @@ export default function CustomerForm() {
         </Grid>
         <Grid item xs={12} sm={8} md={6} lg={4}>
           <TextField
+            onChange={handleCityChange}
+            type='text'
+            value={city}
             //value
             //onChange
             required
@@ -74,6 +108,9 @@ export default function CustomerForm() {
         </Grid>
         <Grid item xs={12} sm={8} md={6} lg={4} >
           <TextField
+            onChange={handleZipChange}
+            type='text'
+            value={zip}
             //value
             //onChange
             required
@@ -95,7 +132,7 @@ export default function CustomerForm() {
           </FormControl>
         </Grid>
         <Grid item xs={12} sm={8} md={6} lg={4}>
-          <Button variant="contained" size="large">Get me closer to 'ZA 🍕</Button>
+          <Button onClick={handleButton} variant="contained" size="large">Get me closer to 'ZA 🍕</Button>
         </Grid>
       </Grid>
       </Box>
