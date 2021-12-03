@@ -29,6 +29,11 @@
   text-align: center;
   color: white;
   font-size: large;
+  background-color: green;
+  border-bottom: 2px solid darkgreen;
+  border-radius: 15px;
+  display: inline-block;
+  padding: 20px;
 }
 
 /* Card styles */

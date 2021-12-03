@@ -26,34 +26,34 @@ function PizzaSelect() {
             <div>
                 <p className="cart-total">Cart Total: $</p>
             </div>
-            <div className="pizza-card-spacer">
                 {pizzaMenu.map((pizza) => {
                    return (
-                    <Card sx={{ maxWidth: 345 }} className="pizza-card">
-                        <CardActionArea>
-                            <CardMedia
-                            component="img"
-                            height="140"
-                            image={pizza.image_path}
-                            alt="pizza_01"
-                            />
-                            <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
-                                {pizza.name}
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary">
-                                {pizza.description}
-                            </Typography>
-                            <Typography variant="h6" color="text.secondary">
-                                <p>{pizza.price}</p>
-                            </Typography>
-                            </CardContent>
-                        </CardActionArea>
-                    </Card>
+                    <div className="pizza-card-spacer">
+                        <Card sx={{ maxWidth: 345 }} className="pizza-card">
+                            <CardActionArea>
+                                <CardMedia
+                                component="img"
+                                height="140"
+                                image={pizza.image_path}
+                                alt="pizza_01"
+                                />
+                                <CardContent>
+                                <Typography gutterBottom variant="h5" component="div">
+                                    {pizza.name}
+                                </Typography>
+                                <Typography variant="body2" color="text.secondary">
+                                    {pizza.description}
+                                </Typography>
+                                <Typography variant="h6" color="text.secondary">
+                                    <p>{pizza.price}</p>
+                                </Typography>
+                                </CardContent>
+                            </CardActionArea>
+                        </Card>
+                    </div>
                    ); 
                 })}
                 <Button variant="contained" color="success">Add</Button>
-            </div>
         </Box>
     );
 }
