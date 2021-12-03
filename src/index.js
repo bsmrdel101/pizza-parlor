@@ -22,14 +22,15 @@ import { logger } from 'redux-logger';
 }
 
   // 2. orders data from server/db for admin page
-  //   const ordersReducer = (state = [], action) => {
-//     switch(action.type) {
-//         case 'PLACEHOLDER_SCREAM':
-//             return action.payload;
-//         default:
-//             return state;
-//     }
-// }
+    const ordersReducer = (state = [], action) => {
+    switch(action.type) {
+        case 'FINAL_ORDER':
+            console.log('in ordersReducer');
+            return action.payload;
+        default:
+            return state;
+    }
+}
 
 
   // 3. The outgoing order being built by client. THE CART
@@ -47,7 +48,7 @@ import { logger } from 'redux-logger';
 const storeInstance = createStore(
   combineReducers({
       pizzaReducer,
-      // orders,
+      ordersReducer,
       // line_item,
       // cart
   }),
