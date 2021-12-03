@@ -37,6 +37,19 @@ export default function CustomerForm() {
     setZip(event.target.value);
   };
 
+  const handleButton = () => {
+    dispatchEvent({
+      type: 'DOX_CONSUMER',
+      payload: {
+        "customer_name": {name},
+        "street_address": {address},
+        "city": {city},
+        "zip": {zip},
+        "type": "delivery"
+      }
+    });
+  };
+
   return (
     <React.Fragment>
       <Typography variant="h5" gutterBottom>
