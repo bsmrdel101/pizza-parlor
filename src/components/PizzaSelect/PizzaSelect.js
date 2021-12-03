@@ -27,52 +27,41 @@ function PizzaSelect() {
                 <p className="cart-total">Cart Total: $</p>
             </div>
             <div className="pizza-card-spacer">
-                <Card sx={{ maxWidth: 345 }} className="pizza-card">
-                <CardActionArea>
-                    <CardMedia
-                    component="img"
-                    height="140"
-                    image={pizzaMenu.image_path}
-                    alt="pizza_01"
-                    />
-                    <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                        {pizzaMenu.name}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                        {pizzaMenu.description}
-                    </Typography>
-                    <Typography variant="h6" color="text.secondary">
-                        <p>price</p>
-                    </Typography>
-                    </CardContent>
-                </CardActionArea>
-                </Card>
+                {pizzaMenu.map((pizza) => {
+                   return (
+                    <Card sx={{ maxWidth: 345 }} className="pizza-card">
+                        <CardActionArea>
+                            <CardMedia
+                            component="img"
+                            height="140"
+                            image={pizza.image_path}
+                            alt="pizza_01"
+                            />
+                            <CardContent>
+                            <Typography gutterBottom variant="h5" component="div">
+                                {pizza.name}
+                            </Typography>
+                            <Typography variant="body2" color="text.secondary">
+                                {pizza.description}
+                            </Typography>
+                            <Typography variant="h6" color="text.secondary">
+                                <p>{pizza.price}</p>
+                            </Typography>
+                            </CardContent>
+                        </CardActionArea>
+                    </Card>
+                   ); 
+                })}
                 <Button variant="contained" color="success">Add</Button>
             </div>
-            {/* Sausage pizza */}
-            <div className="pizza-card-spacer">
-                <Card sx={{ maxWidth: 345 }} className="pizza-card">
-                <CardActionArea>
-                    <CardMedia
-                    component="img"
-                    height="140"
-                    image="images/pizza_02.jpeg"
-                    alt="pizza_02"
-                    />
-                    <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                        Sausage Pizza
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                        Hot italian sausage, frozen bread dough, pizza sauce, mozzarella
-                    </Typography>
-                    </CardContent>
-                </CardActionArea>
-                </Card>
-                <Button variant="contained" color="success">Add</Button>
-            </div>
-            {/* Pizza pineapple */}
+        </Box>
+    );
+}
+
+export default PizzaSelect;
+
+
+ {/* Forbidden Pizza
             <div className="pizza-card-spacer">
                 <Card sx={{ maxWidth: 345 }} className="pizza-card">
                 <CardActionArea>
@@ -93,9 +82,4 @@ function PizzaSelect() {
                 </CardActionArea>
                 </Card>
                 <Button variant="contained" color="success">Add</Button>
-            </div>
-        </Box>
-    );
-}
-
-export default PizzaSelect;
+            </div> */}
