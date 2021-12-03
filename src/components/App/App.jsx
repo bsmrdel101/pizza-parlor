@@ -64,21 +64,39 @@ useEffect(() => {
 }, []);
 
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <h1 className='App-title'>Prime Pizza</h1>
-      </header>
-  
-      <img src='images/pizza_photo.png' />
-      <p>Pizza is great.</p>
-      
-      <AdminPage />
-      <TestComponent />
-      
-      <PizzaSelect /> 
-      <CustomerForm />
-      <Checkout />
+    <div>
+      {/* <img src='images/pizza_photo.png' />
+      <p>Pizza is great.</p> */}
+      <Router>
+        <div className='App'>
 
+          <Route exact path="/">
+            <header className='App-header'>
+              <h1 className='App-title'>Prime Pizza</h1>
+            </header>
+            <PizzaSelect />
+          </Route>
+
+          <Route exact path="/CustomerForm">
+            <header className='App-header'>
+              <h1 className='App-title'>Prime Pizza</h1>
+            </header>
+            <CustomerForm />
+          </Route>
+
+          <Route>
+            <header className='App-header'>
+              <h1 className='App-title'>Prime Pizza</h1>
+            </header>
+            <Checkout />
+          </Route>
+
+          <Route exact path="/admin">
+            <AdminPage />
+          </Route>
+
+        </div>
+      </Router>
     </div>
   );
 }
