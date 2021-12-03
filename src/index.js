@@ -22,14 +22,15 @@ import { logger } from 'redux-logger';
 }
 
   // 2. orders data from server/db for admin page
-  //   const ordersReducer = (state = [], action) => {
-//     switch(action.type) {
-//         case 'PLACEHOLDER_SCREAM':
-//             return action.payload;
-//         default:
-//             return state;
-//     }
-// }
+    const ordersReducer = (state = [], action) => {
+    switch(action.type) {
+        case 'FINAL_ORDER':
+            console.log('in ordersReducer');
+            return action.payload;
+        default:
+            return state;
+    }
+}
 
 
 
@@ -43,25 +44,23 @@ import { logger } from 'redux-logger';
       "pizzas": [{
         "id": "",
         "quantity": "1"
-      },{
-        "id": "",
-        "quantity": "1"
       }]
     }], action) => {
     switch(action.type) {
-        case 'PIZZAS_PRICE':
-            return [{...state,
-                    "total": action.payload.price,
-                    "pizzas": action.payload.pizzas
-                }];
-        case 'DOX_CONSUMER':
-            return [{...state,
-                    "customer_name": action.payload.name,
-                    "street_address": action.payload.address,
-                    "city": action.payload.city,
-                    "zip": action.payload.zip,
-                    "type": action.payload.type
-            }];
+      case 'ADD_TO_CART':
+        return [...state, action.payload];
+        // case 'PIZZAS_PRICE':
+        //     return [...state,
+        //             "total": action.payload.price,
+        //             "pizzas": action.payload.pizzas
+        //         ];
+        // case 'DOX_CONSUMER':
+        //     return [...state,
+        //             "customer_name": action.payload.name,
+        //             "street_address": action.payload.address,
+        //             "zip": action.payload.zip,
+        //             "type": action.payload.type
+        //         ];
         default:
             return state;
 
@@ -72,8 +71,8 @@ import { logger } from 'redux-logger';
 const storeInstance = createStore(
   combineReducers({
       pizzaReducer,
-      // orders,
-      // cartReducer
+      ordersReducer,
+      cartReducer
   }),
   applyMiddleware(logger),
 );

@@ -19,14 +19,13 @@ import Checkout from '../Checkout/Checkout.jsx';
 
 function App() {
   // useSelector Global State Access
-  const pizzaMenu = useSelector((store) => store.pizzaReducer);
+  // const pizzaMenu = useSelector((store) => store.pizzaReducer)
 
 //alias useDispatch
 const dispatch = useDispatch();
 
 //AXIOS GET function that fetches Pizza table, and dispatches to pizzaReducer
 function fetchPizzaMenu() {
-
   axios({
     method: 'GET',
     url: '/api/pizza'
@@ -44,7 +43,20 @@ function fetchPizzaMenu() {
   });
 }
 
-//AXIOS GET api/orders
+
+const getFinalOrders = () => {
+  axios({
+    method: 'GET',
+    url: '/api/order'
+  })
+    .then((response) => {
+      const order = response.data;
+      dispatch({
+        type: 'FINAL_ORDER',
+        payload: order
+      })
+    })
+}
 
 //AXIOS POST checkout information
 // function submitOrder(object)
@@ -56,14 +68,15 @@ function fetchPizzaMenu() {
 
 
 
+
 // get Pizza data from server on load
 useEffect(() => {
   console.log('in useEffect');
   fetchPizzaMenu();
-  
 }, []);
 
   return (
+
     <div>
       {/* <img src='images/pizza_photo.png' />
       <p>Pizza is great.</p> */}
@@ -97,6 +110,7 @@ useEffect(() => {
 
         </div>
       </Router>
+
     </div>
   );
 }

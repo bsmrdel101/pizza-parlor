@@ -1,61 +1,71 @@
+import { useSelector, useDispatch } from 'react-redux';
+import { useState } from 'react';
+
+// MUI
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
+import Box from '@mui/material/Box';
 
 function PizzaSelect() {
+    const pizzaMenu = useSelector((store) => store.pizzaReducer)
+    const cart = useSelector((store) => store.cartReducer)
+    const [tempCart, setTempCart] = useState([]);
+
+    const dispatch = useDispatch();
+    
+    const addToCart = () => {
+        setTempCart();
+        dispatch({
+            type: 'ADD_TO_CART',
+            payload: tempCart
+        })
+    }
+
     return (
-        <div className="pizza-card-container">
+        <Box sx={{ flexGrow: 1 }} className="pizza-card-container">
             <h2 className="subtitle">Step 1: Select Your Pizza!</h2>
             <div>
                 <p className="cart-total">Cart Total: $</p>
             </div>
-            {/* Pepperoni pizza */}
-            <div className="pizza-card-spacer">
-                <Card sx={{ maxWidth: 345 }} className="pizza-card">
-                <CardActionArea>
-                    <CardMedia
-                    component="img"
-                    height="140"
-                    image="images/pizza_01.jpeg"
-                    alt="pizza_01"
-                    />
-                    <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                        Pepperoni Pizza
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                        Homemade classic pepperoni pizza, topped with the souls of our fallen employee's.
-                    </Typography>
-                    </CardContent>
-                </CardActionArea>
-                </Card>
-                <Button variant="contained" color="success">Add</Button>
-            </div>
-            {/* Sausage pizza */}
-            <div className="pizza-card-spacer">
-                <Card sx={{ maxWidth: 345 }} className="pizza-card">
-                <CardActionArea>
-                    <CardMedia
-                    component="img"
-                    height="140"
-                    image="images/pizza_02.jpeg"
-                    alt="pizza_02"
-                    />
-                    <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                        Sausage Pizza
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                        Hot italian sausage, frozen bread dough, pizza sauce, mozzarella
-                    </Typography>
-                    </CardContent>
-                </CardActionArea>
-                </Card>
-                <Button variant="contained" color="success">Add</Button>
-            </div>
-            {/* Pizza pineapple */}
+                {pizzaMenu.map((pizza) => {
+                   return (
+                    <div className="pizza-card-spacer">
+                        <Card sx={{ maxWidth: 345 }} className="pizza-card">
+                            <CardActionArea>
+                                <CardMedia
+                                component="img"
+                                height="140"
+                                image={pizza.image_path}
+                                alt="pizza_01"
+                                />
+                                <CardContent>
+                                <Typography gutterBottom variant="h5" component="div">
+                                    {pizza.name}
+                                </Typography>
+                                <Typography variant="body2" color="text.secondary">
+                                    {pizza.description}
+                                </Typography>
+                                <Typography variant="h6" color="text.secondary">
+                                    <p>{pizza.price}</p>
+                                </Typography>
+                                </CardContent>
+                            </CardActionArea>
+                        </Card>
+                        <Button onClick={addToCart} variant="contained" color="success">Add</Button>
+                    </div>
+                   ); 
+                })}
+        </Box>
+    );
+}
+
+export default PizzaSelect;
+
+
+ {/* Forbidden Pizza
             <div className="pizza-card-spacer">
                 <Card sx={{ maxWidth: 345 }} className="pizza-card">
                 <CardActionArea>
@@ -76,9 +86,4 @@ function PizzaSelect() {
                 </CardActionArea>
                 </Card>
                 <Button variant="contained" color="success">Add</Button>
-            </div>
-        </div>
-    );
-}
-
-export default PizzaSelect;
+            </div> */}
