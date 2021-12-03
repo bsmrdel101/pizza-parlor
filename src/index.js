@@ -9,7 +9,7 @@ import { Provider } from 'react-redux';
 
 //Three Reducers, or Four?
 
-  // 1. pizza data from server/db for Pizza page
+//   1. pizza data from server/db for Pizza page
 //   const pizzaReducer = (state = [], action) => {
 //     switch(action.type) {
 //         case 'PLACEHOLDER_SCREAM':
