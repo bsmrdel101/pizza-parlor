@@ -1,34 +1,49 @@
+import { useSelector } from 'react-redux';
+
+// MUI
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
-import { useEffect } from 'react';
-import axios from 'axios';
+import Box from '@mui/material/Box';
 
 function PizzaSelect() {
+    const pizzaMenu = useSelector((store) => store.pizzaReducer)
+    
+    console.log(pizzaMenu);
+    console.log(pizzaMenu.name);
+
     return (
-        <div className="pizza-card-container">
+        // <div>
+        //     {pizzaMenu.map((pizza) => {
+        //         return <p>{pizza.name}</p>
+        //     })}
+        // </div>
+
+        <Box sx={{ flexGrow: 1 }} className="pizza-card-container">
             <h2 className="subtitle">Step 1: Select Your Pizza!</h2>
             <div>
                 <p className="cart-total">Cart Total: $</p>
             </div>
-            {/* Pepperoni pizza */}
             <div className="pizza-card-spacer">
                 <Card sx={{ maxWidth: 345 }} className="pizza-card">
                 <CardActionArea>
                     <CardMedia
                     component="img"
                     height="140"
-                    image="images/pizza_01.jpeg"
+                    image={pizzaMenu.image_path}
                     alt="pizza_01"
                     />
                     <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
-                        Pepperoni Pizza
+                        {pizzaMenu.name}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                        Homemade classic pepperoni pizza, topped with the souls of our fallen employee's.
+                        {pizzaMenu.description}
+                    </Typography>
+                    <Typography variant="h6" color="text.secondary">
+                        <p>price</p>
                     </Typography>
                     </CardContent>
                 </CardActionArea>
@@ -79,7 +94,7 @@ function PizzaSelect() {
                 </Card>
                 <Button variant="contained" color="success">Add</Button>
             </div>
-        </div>
+        </Box>
     );
 }
 

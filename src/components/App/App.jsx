@@ -19,14 +19,13 @@ import Checkout from '../Checkout/Checkout.jsx';
 
 function App() {
   // useSelector Global State Access
-  const pizzaMenu = useSelector((store) => store.pizzaReducer)
+  // const pizzaMenu = useSelector((store) => store.pizzaReducer)
 
 //alias useDispatch
 const dispatch = useDispatch();
 
 //AXIOS GET function that fetches Pizza table, and dispatches to pizzaReducer
 function fetchPizzaMenu() {
-
   axios({
     method: 'GET',
     url: '/api/pizza'
@@ -59,7 +58,6 @@ function fetchPizzaMenu() {
 useEffect(() => {
   console.log('in useEffect');
   fetchPizzaMenu();
-  console.log(pizzaMenu);
 }, []);
 
   return (
@@ -74,7 +72,7 @@ useEffect(() => {
       <AdminPage />
       <TestComponent />
       
-      <PizzaSelect /> 
+      <PizzaSelect fetchPizzaMenu={fetchPizzaMenu}/> 
       <CustomerForm />
       <Checkout />
 

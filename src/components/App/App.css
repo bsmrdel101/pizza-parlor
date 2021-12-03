@@ -19,8 +19,10 @@
   display: inline-block;
   color: white;
   border-bottom: 2px solid darkred;
-  padding: 2vh 0 3px 0;
+  padding: 2vh 20px 2vh 20px;
   font-size: 35px;
+  background-color: #cf2e2eed;
+  border-radius: 15px;
 }
 
 .cart-total {
@@ -31,8 +33,8 @@
 
 /* Card styles */
 .pizza-card {
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   justify-content: center;
   min-height: 50vh;
   margin: auto;
