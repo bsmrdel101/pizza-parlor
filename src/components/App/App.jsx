@@ -19,7 +19,7 @@ import Checkout from '../Checkout/Checkout.jsx';
 
 function App() {
   // useSelector Global State Access
-  const pizzaMenu = useSelector((store) => store.pizzaReducer)
+  const pizzaMenu = useSelector((store) => store.pizzaReducer);
 
 //alias useDispatch
 const dispatch = useDispatch();
@@ -30,7 +30,7 @@ function fetchPizzaMenu() {
   axios({
     method: 'GET',
     url: '/api/pizza'
-  }).then( response => {
+  }).then( (response) => {
     // response.data is the array of artists
     console.log('We get Za:', response.data);
     // TODO - update this to dispatch to Redux 👍
@@ -38,7 +38,8 @@ function fetchPizzaMenu() {
       type: 'HOT_PIZZA_HERE',
       payload: response.data
     })
-  }).catch( error => {
+    
+  }).catch( (error) => {
     console.log('I cant let you pizza, Dave:', error);
   });
 }
@@ -59,7 +60,7 @@ function fetchPizzaMenu() {
 useEffect(() => {
   console.log('in useEffect');
   fetchPizzaMenu();
-  console.log(pizzaMenu);
+  
 }, []);
 
   return (

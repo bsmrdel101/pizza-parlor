@@ -49,18 +49,19 @@ import { logger } from 'redux-logger';
       }]
     }], action) => {
     switch(action.type) {
-        // case 'PIZZAS_PRICE':
-        //     return [...state,
-        //             "total": action.payload.price,
-        //             "pizzas": action.payload.pizzas
-        //         ];
-        // case 'DOX_CONSUMER':
-        //     return [...state,
-        //             "customer_name": action.payload.name,
-        //             "street_address": action.payload.address,
-        //             "zip": action.payload.zip,
-        //             "type": action.payload.type
-        //         ];
+        case 'PIZZAS_PRICE':
+            return [{...state,
+                    "total": action.payload.price,
+                    "pizzas": action.payload.pizzas
+                }];
+        case 'DOX_CONSUMER':
+            return [{...state,
+                    "customer_name": action.payload.name,
+                    "street_address": action.payload.address,
+                    "city": action.payload.city,
+                    "zip": action.payload.zip,
+                    "type": action.payload.type
+            }];
         default:
             return state;
 
