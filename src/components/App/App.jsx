@@ -43,6 +43,18 @@ function fetchPizzaMenu() {
   });
 }
 
+//AXIOS GET api/orders
+
+//AXIOS POST checkout information
+// function submitOrder(object)
+// POST data: object
+//.then that confirms the order was received
+//.then we can reset cartReducer to blank
+  // dispatch HEYFORGETEVERYTHING
+
+
+
+
 // get Pizza data from server on load
 useEffect(() => {
   console.log('in useEffect');
