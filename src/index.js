@@ -6,6 +6,7 @@ import App from './components/App/App';
 //REDUX HOOKS
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import { logger } from 'redux-logger';
 
 //Three Reducers, or Four?
 
@@ -31,18 +32,7 @@ import { Provider } from 'react-redux';
 // }
 
 
-  // 3 line_item data from server/db
-//   const ???Reducer = (state = [], action) => {
-//     switch(action.type) {
-//         case 'PLACEHOLDER_SCREAM':
-//             return action.payload;
-//         default:
-//             return state;
-//     }
-// }
-
-
-  // 4. The outgoing order being built by client. THE CART
+  // 3. The outgoing order being built by client. THE CART
   //   const ?!?!Reducer = (state = [], action) => {
 //     switch(action.type) {
 //         case 'PLACEHOLDER_CART_SCREAM':
@@ -56,7 +46,7 @@ import { Provider } from 'react-redux';
 
 const storeInstance = createStore(
   combineReducers({
-      pizza,
+      pizzaReducer,
       // orders,
       // line_item,
       // cart

@@ -14,20 +14,19 @@ import TestComponent from '../TestComponent/TestComponent.jsx';
 import CustomerForm from '../CustomerForm/CustomerForm.jsx';
 import Checkout from '../Checkout/Checkout';
 
-// useSelector Global State Access
-const pizzaMenu = useSelector((store) => store.pizzaReducer)
-console.log(pizzaMenu);
 
 
-// get Pizza data from server on load
-useEffect(() => {
-  console.log('in useEffect');
-  fetchPizzaMenu();
-}, []);
 
+function App() {
+  // useSelector Global State Access
+  const pizzaMenu = useSelector((store) => store.pizzaReducer)
+
+//alias useDispatch
+const dispatch = useDispatch();
 
 //AXIOS GET function that fetches Pizza table, and dispatches to pizzaReducer
 function fetchPizzaMenu() {
+
   axios({
     method: 'GET',
     url: '/api/pizza'
@@ -44,8 +43,12 @@ function fetchPizzaMenu() {
   });
 }
 
-
-function App() {
+// get Pizza data from server on load
+useEffect(() => {
+  console.log('in useEffect');
+  fetchPizzaMenu();
+  console.log(pizzaMenu);
+}, []);
 
   return (
     <div className='App'>
