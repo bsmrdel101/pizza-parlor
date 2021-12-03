@@ -44,6 +44,21 @@ function fetchPizzaMenu() {
   });
 }
 
+
+const getFinalOrders = () => {
+  axios({
+    method: 'GET',
+    url: '/api/order'
+  })
+    .then((response) => {
+      const order = response.data;
+      dispatch({
+        type: 'FINAL_ORDER',
+        payload: order
+      })
+    })
+}
+
 //AXIOS GET api/orders
 
 //AXIOS POST checkout information
@@ -56,11 +71,13 @@ function fetchPizzaMenu() {
 
 
 
+
 // get Pizza data from server on load
 useEffect(() => {
   console.log('in useEffect');
   fetchPizzaMenu();
-  
+  getFinalOrders();
+  console.log(pizzaMenu);
 }, []);
 
   return (
