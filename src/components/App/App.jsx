@@ -15,7 +15,40 @@ import CustomerForm from '../CustomerForm/CustomerForm.jsx';
 import Checkout from '../Checkout/Checkout.jsx';
 
 
+
+
 function App() {
+  // useSelector Global State Access
+  const pizzaMenu = useSelector((store) => store.pizzaReducer)
+
+//alias useDispatch
+const dispatch = useDispatch();
+
+//AXIOS GET function that fetches Pizza table, and dispatches to pizzaReducer
+function fetchPizzaMenu() {
+
+  axios({
+    method: 'GET',
+    url: '/api/pizza'
+  }).then( response => {
+    // response.data is the array of artists
+    console.log('We get Za:', response.data);
+    // TODO - update this to dispatch to Redux 👍
+    dispatch({
+      type: 'HOT_PIZZA_HERE',
+      payload: response.data
+    })
+  }).catch( error => {
+    console.log('I cant let you pizza, Dave:', error);
+  });
+}
+
+// get Pizza data from server on load
+useEffect(() => {
+  console.log('in useEffect');
+  fetchPizzaMenu();
+  console.log(pizzaMenu);
+}, []);
 
   return (
     <div className='App'>
@@ -29,7 +62,7 @@ function App() {
       <AdminPage />
       <TestComponent />
       
-      <PizzaSelect />
+      <PizzaSelect /> 
       <CustomerForm />
       <Checkout />
 
