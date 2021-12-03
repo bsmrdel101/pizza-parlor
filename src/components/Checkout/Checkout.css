@@ -1,0 +1,29 @@
+.CheckoutHeader {
+  background-color: #222;
+  height: 70px;
+  padding: 20px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 2em;
+}
+
+.Border {
+  height: 30px;
+  padding: 30px;
+  border-top: 2px solid #222;
+}
+
+.designTable {
+  margin: center;
+}
+
+/* .subtitle {
+  display: inline-block;
+  color: white;
+  border-bottom: 2px solid darkred;
+  padding: 2vh 0 3px 0;
+  font-size: 35px;
+} */
