@@ -10,14 +10,15 @@ import { Provider } from 'react-redux';
 //Three Reducers, or Four?
 
   // 1. pizza data from server/db for Pizza page
-//   const pizzaReducer = (state = [], action) => {
-//     switch(action.type) {
-//         case 'PLACEHOLDER_SCREAM':
-//             return action.payload;
-//         default:
-//             return state;
-//     }
-// }
+  // takes 1Arg is previous state, 2arg is ACTION, returns NEXTstate
+  const pizzaReducer = (state = [], action) => {
+    switch(action.type) {
+        case 'HOT_PIZZA_HERE':
+            return action.payload;
+        default:
+            return state;
+    }
+}
 
   // 2. orders data from server/db for admin page
   //   const ordersReducer = (state = [], action) => {
@@ -56,9 +57,9 @@ import { Provider } from 'react-redux';
 const storeInstance = createStore(
   combineReducers({
       pizza,
-      orders,
-      line_item,
-      cart
+      // orders,
+      // line_item,
+      // cart
   }),
   applyMiddleware(logger),
 );
