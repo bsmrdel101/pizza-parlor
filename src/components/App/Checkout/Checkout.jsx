@@ -120,9 +120,9 @@ function Checkout() {
                 </Table>
                 </div>
               </TableContainer>
-
+                  <div className="test">
                     <Button variant="contained" size="medium">Checkout 🍕</Button>
-
+                  </div>
             </React.Fragment>
         );
         
