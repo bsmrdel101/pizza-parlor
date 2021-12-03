@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 
-
+//Import HOOKS
+import { useSelector, useDispatch } from 'react-redux';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 
 // Import components
